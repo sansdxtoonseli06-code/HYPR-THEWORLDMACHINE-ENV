@@ -1,0 +1,195 @@
+// ~/.config/waybar/config.jsonc
+// Barra neon morada para Hyprland
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "reload_style_on_change": true,
+
+  "modules-left": ["custom/logo", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "custom/updates",
+    "custom/clipboard",
+    "idle_inhibitor",
+    "backlight",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery"
+  ],
+
+  // ── izquierda ─────────────────────────────────────────────
+  "custom/logo": {
+    "format": "󰊠",
+    "tooltip": false,
+    "on-click": "niripwmenu"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "●",
+      "visible": "●",
+      "urgent": "●",
+      "empty": "○",
+      "default": "○"
+    },
+    "all-outputs": false,
+    "sort-by": "number",
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 45,
+    "icon": false,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹  $1",
+      "(.*) - Mozilla Firefox": "󰈹  $1",
+      "(.*) - Visual Studio Code": "󰨞  $1",
+      "(.*) — Dolphin": "󰉋  $1"
+    }
+  },
+
+  // ── centro ────────────────────────────────────────────────
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:L%a %d %b  %H:%M}",
+    "tooltip-format": "<big>{:L%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "format": {
+        "today": "<span color='#e3d3ff'><b><u>{}</u></b></span>",
+        "days": "<span color='#b9a3d9'>{}</span>",
+        "weeks": "<span color='#7b5fa8'>W{}</span>",
+        "weekdays": "<span color='#a77bff'><b>{}</b></span>"
+      }
+    }
+    // el prefijo L de {:L%B} usa el idioma del sistema; si el calendario
+    // empieza la semana en domingo, descomenta la linea siguiente
+    // "locale": "es_ES.UTF-8"
+  },
+
+  // ── derecha ───────────────────────────────────────────────
+  "tray": {
+    "icon-size": 14,
+    "spacing": 8
+  },
+
+  "custom/updates": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1800,
+    "exec": "$HOME/.config/waybar/scripts/updates.sh",
+    "on-click": "foot -e paru -Syu"
+  },
+
+  "custom/clipboard": {
+    "format": "󰅍",
+    "tooltip": false,
+    "on-click": "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰾪"
+    },
+    "tooltip-format-activated": "suspensión bloqueada",
+    "tooltip-format-deactivated": "suspensión permitida"
+  },
+
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "tooltip-format": "brillo {percent}%",
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "smooth-scrolling-threshold": 1
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "󰝟",
+    "format-bluetooth": "󰂰",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󰋎",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "tooltip-format": "{desc}  {volume}%",
+    "scroll-step": 5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-connected-battery": "󰂱 {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\n{num_connections} conectados",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} conectados\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"
+  },
+
+  "network": {
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤭",
+    "tooltip-format-wifi": "{essid}  {signalStrength}%\n{ipaddr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
+    "tooltip-format-disconnected": "sin conexión",
+    "on-click": "nm-connection-editor"
+  },
+
+  "cpu": {
+    "interval": 3,
+    "format": "󰻠 {usage}%",
+    "min-length": 7,
+    "on-click": "foot -e btop"
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {percentage}%",
+    "tooltip-format": "{used:0.1f}G / {total:0.1f}G",
+    "min-length": 7
+  },
+
+  "temperature": {
+    // si marca 0°C, descomenta y ajusta con: ls /sys/class/hwmon/*/temp1_input
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "interval": 5,
+    "critical-threshold": 82,
+    "format": "󰔏 {temperatureC}°C",
+    "min-length": 7,
+    "on-click": "foot -e btop"
+  },
+
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"],
+    "tooltip-format": "{timeTo}"
+  }
+}

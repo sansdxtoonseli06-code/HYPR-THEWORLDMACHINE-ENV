@@ -1,0 +1,18 @@
+# ~/.config/niripwmenu/config.yaml
+# Power menu minimalista para niri
+
+buttons:
+  - icon_path: "~/.config/niripwmenu/logoff.png"
+    id: "buttonLogout"
+    hint: "cerrar sesión"
+    command: "hyprctl dispatch exit"
+
+  - icon_path: "~/.config/niripwmenu/reboot.png"
+    id: "buttonRestart"
+    hint: "reiniciar"
+    command: "systemctl reboot"
+
+  - icon_path: "~/.config/niripwmenu/shutdown.png"
+    id: "buttonPowerOff"
+    hint: "apagar"
+    command: "systemctl poweroff"

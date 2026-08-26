@@ -1,0 +1,312 @@
+/**
+ *
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ *
+ **/
+
+configuration {
+    modi: "drun,run,filebrowser,window";
+    show-icons: true;
+
+    display-drun: "APPS";
+    display-run: "RUN";
+    display-filebrowser: "FILES";
+    display-window: "WINDOW";
+
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+}
+
+/*****----- Colors -----*****/
+* {
+    font: "JetBrains Mono Nerd Font 10";
+
+    /* Negro / azul oscuro */
+    background: #050A14;
+    background-alt: #0B1B33;
+
+    /* Texto */
+    foreground: #FFFFFF;
+    foreground-alt: #B8C7D9;
+
+    /* Azul */
+    selected: #123A63;
+    active: #1E5A91;
+    urgent: #163B5C;
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency: "real";
+
+    location: center;
+    anchor: center;
+
+    fullscreen: false;
+    width: 1000px;
+
+    x-offset: 0px;
+    y-offset: 0px;
+
+    enabled: true;
+
+    border-radius: 15px;
+
+    cursor: "default";
+
+    background-color: @background;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled: true;
+    spacing: 0px;
+
+    background-color: transparent;
+
+    orientation: horizontal;
+
+    children: [
+        "imagebox",
+        "listbox"
+    ];
+}
+
+/*****----- Image Box -----*****/
+imagebox {
+    padding: 20px;
+
+    background-color: @background;
+
+    background-image: url("~/.config/.dotfile/Images/nikofi.png", height);
+
+    orientation: vertical;
+
+    children: [
+        "inputbar",
+        "dummy",
+        "mode-switcher"
+    ];
+}
+
+dummy {
+    background-color: transparent;
+}
+
+/*****----- List Box -----*****/
+listbox {
+    spacing: 20px;
+    padding: 20px;
+
+    background-color: transparent;
+
+    orientation: vertical;
+
+    children: [
+        "message",
+        "listview"
+    ];
+}
+
+/*****----- Input Bar -----*****/
+inputbar {
+    enabled: true;
+
+    spacing: 10px;
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background-color: @background-alt;
+
+    text-color: @foreground;
+
+    children: [
+        "textbox-prompt-colon",
+        "entry"
+    ];
+}
+
+textbox-prompt-colon {
+    enabled: true;
+    expand: false;
+
+    str: "";
+
+    background-color: transparent;
+
+    text-color: @foreground;
+}
+
+entry {
+    enabled: true;
+
+    background-color: transparent;
+
+    text-color: @foreground;
+
+    cursor: text;
+
+    placeholder: "Search";
+    placeholder-color: @foreground-alt;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher {
+    enabled: true;
+
+    spacing: 20px;
+
+    background-color: transparent;
+
+    text-color: @foreground;
+}
+
+button {
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background-color: @background-alt;
+
+    text-color: @foreground;
+
+    cursor: pointer;
+}
+
+button selected {
+    background-color: @selected;
+
+    text-color: @foreground;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled: true;
+
+    columns: 1;
+    lines: 8;
+
+    cycle: true;
+    dynamic: true;
+
+    scrollbar: false;
+
+    layout: vertical;
+    reverse: false;
+
+    fixed-height: true;
+    fixed-columns: true;
+
+    spacing: 10px;
+
+    background-color: transparent;
+
+    text-color: @foreground;
+
+    cursor: default;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled: true;
+
+    spacing: 15px;
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background-color: @background-alt;
+
+    text-color: @foreground;
+
+    cursor: pointer;
+}
+
+/* Aplicación normal */
+element normal.normal {
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+/* Aplicación urgente */
+element normal.urgent {
+    background-color: @urgent;
+    text-color: @foreground;
+}
+
+/* Aplicación activa */
+element normal.active {
+    background-color: @active;
+    text-color: @foreground;
+}
+
+/* Aplicación seleccionada */
+element selected.normal {
+    background-color: @selected;
+    text-color: @foreground;
+}
+
+/* Seleccionada + urgente */
+element selected.urgent {
+    background-color: @urgent;
+    text-color: @foreground;
+}
+
+/* Seleccionada + activa */
+element selected.active {
+    background-color: @active;
+    text-color: @foreground;
+}
+
+/*****----- Element Icons -----*****/
+element-icon {
+    background-color: transparent;
+
+    text-color: @foreground;
+
+    size: 32px;
+
+    cursor: inherit;
+}
+
+/*****----- Element Text -----*****/
+element-text {
+    background-color: transparent;
+
+    text-color: @foreground;
+
+    cursor: inherit;
+
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color: transparent;
+}
+
+textbox {
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background-color: @background-alt;
+
+    text-color: @foreground;
+
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+error-message {
+    padding: 15px;
+
+    border-radius: 20px;
+
+    background-color: @background;
+
+    text-color: @foreground;
+}

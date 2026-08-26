@@ -1,0 +1,225 @@
+/* ~/.config/waybar/style.css
+ * Neon purple — waybar (GTK3) para Hyprland
+ *
+ *   fondo    rgba(15, 10, 24, 0.55)
+ *   acento   #a77bff
+ *   texto    #d9c4ff
+ *   alerta   #ff5f87
+ */
+
+@define-color bg      rgba(15, 10, 24, 0.55);
+@define-color line    rgba(167, 123, 255, 0.22);
+@define-color accent  #a77bff;
+@define-color text    #d9c4ff;
+@define-color bright  #f0e6ff;
+@define-color dim     rgba(167, 123, 255, 0.38);
+@define-color alert   #ff5f87;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+}
+
+/* ── las tres islas flotantes ──────────────────────────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: @bg;
+  border: 1px solid @line;
+  border-radius: 16px;
+  padding: 0 4px;
+  margin: 6px 0 2px 0;
+  box-shadow: 0 0 18px rgba(150, 80, 255, 0.16);
+}
+
+.modules-left  { margin-left: 8px; }
+.modules-right { margin-right: 8px; }
+
+/* ── espaciado comun de modulos ────────────────────────────── */
+#custom-logo,
+#workspaces,
+#window,
+#clock,
+#tray,
+#custom-updates,
+#custom-clipboard,
+#idle_inhibitor,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery {
+  padding: 2px 10px;
+  color: @text;
+  background: transparent;
+  transition: all 200ms ease;
+}
+
+/* los iconos sueltos se encienden al pasar por encima */
+#custom-clipboard:hover,
+#idle_inhibitor:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#battery:hover,
+#custom-updates:hover {
+  color: @bright;
+  text-shadow: 0 0 10px rgba(167, 123, 255, 0.9);
+}
+
+/* ── logo (abre el power menu) ─────────────────────────────── */
+#custom-logo {
+  font-size: 16px;
+  color: @accent;
+  padding: 0 12px 0 14px;
+  text-shadow: 0 0 12px rgba(167, 123, 255, 0.8);
+}
+
+#custom-logo:hover {
+  color: @bright;
+  text-shadow: 0 0 16px rgba(200, 150, 255, 1);
+}
+
+/* ── workspaces ────────────────────────────────────────────── */
+#workspaces {
+  padding: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 7px;
+  margin: 4px 1px;
+  min-width: 0;
+  border-radius: 10px;
+  color: @dim;
+  background: transparent;
+  transition: all 220ms ease;
+}
+
+#workspaces button:hover {
+  color: @text;
+  background: rgba(167, 123, 255, 0.10);
+}
+
+#workspaces button.active,
+#workspaces button.visible {
+  color: @bright;
+  background: rgba(167, 123, 255, 0.14);
+  text-shadow: 0 0 10px rgba(167, 123, 255, 1);
+  box-shadow: 0 0 14px rgba(150, 80, 255, 0.45);
+}
+
+#workspaces button.empty {
+  color: rgba(167, 123, 255, 0.28);
+}
+
+#workspaces button.special {
+  color: #7fe3ff;
+  text-shadow: 0 0 10px rgba(127, 227, 255, 0.8);
+}
+
+#workspaces button.urgent {
+  color: @alert;
+  background: rgba(255, 95, 135, 0.12);
+  text-shadow: 0 0 10px rgba(255, 95, 135, 0.9);
+}
+
+/* ── titulo de ventana ─────────────────────────────────────── */
+#window {
+  color: rgba(217, 196, 255, 0.62);
+  font-weight: 400;
+  padding-right: 14px;
+}
+
+/* ── reloj: el tubo mas brillante de la barra ──────────────── */
+#clock {
+  color: @bright;
+  font-feature-settings: "tnum";
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 2px 16px;
+  text-shadow: 0 0 12px rgba(167, 123, 255, 0.85);
+}
+
+/* ── estados ───────────────────────────────────────────────── */
+#pulseaudio.muted,
+#network.disconnected,
+#bluetooth.off,
+#bluetooth.disabled {
+  color: rgba(167, 123, 255, 0.30);
+  text-shadow: none;
+}
+
+#idle_inhibitor.activated {
+  color: @bright;
+  text-shadow: 0 0 12px rgba(167, 123, 255, 1);
+}
+
+#custom-updates.pending {
+  color: @bright;
+  text-shadow: 0 0 10px rgba(167, 123, 255, 0.9);
+}
+
+#temperature.critical,
+#battery.critical:not(.charging) {
+  color: @alert;
+  text-shadow: 0 0 12px rgba(255, 95, 135, 0.9);
+  animation: neon-pulse 1.6s ease-in-out infinite alternate;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffb86c;
+  text-shadow: 0 0 10px rgba(255, 184, 108, 0.7);
+}
+
+#battery.charging {
+  color: @bright;
+  text-shadow: 0 0 10px rgba(167, 123, 255, 0.9);
+}
+
+@keyframes neon-pulse {
+  from { text-shadow: 0 0 4px  rgba(255, 95, 135, 0.35); }
+  to   { text-shadow: 0 0 16px rgba(255, 95, 135, 1); }
+}
+
+/* ── tray ──────────────────────────────────────────────────── */
+#tray {
+  padding: 0 10px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* ── tooltips a juego ──────────────────────────────────────── */
+tooltip {
+  background: rgba(15, 10, 24, 0.94);
+  border: 1px solid @line;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @text;
+  padding: 4px;
+}
