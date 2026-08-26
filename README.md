@@ -10,7 +10,7 @@ Welcome to the tiling window manager based on the indie game Oneshot made as a p
 https://github.com/user-attachments/assets/cff0f2b8-efb3-4c69-8bd9-fda405fa8ddc
 
 
-═══════════════════════════════════════════════════════════════════════════
+════════════════════════════════════════════════════════════════════
 
 <img width="1500" height="500" alt="INFORMATION" src="https://github.com/user-attachments/assets/dfdb7b74-000f-415b-aa1e-582db83d4671" />
 
@@ -26,4 +26,4 @@ https://github.com/user-attachments/assets/cff0f2b8-efb3-4c69-8bd9-fda405fa8ddc
 
 
 
-═══════════════════════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════════════════
