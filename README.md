@@ -5,12 +5,12 @@ Welcome to the tiling window manager based on the indie game Oneshot made as a p
 
 # **COMPONENTS**
 
-|--------|-----:|
-| Distro | CachyOS (Based on Arch) |
-| Tiling window manager | Hyperland (Wayland) |
-| Status bar | Waybar |
+| Component | Software |
+|-----------|----------|
+| Distro | CachyOS (based on Arch Linux) |
+| Tiling Window Manager | Hyprland (Wayland) |
+| Status Bar | Waybar |
 | Terminal | Kitty |
-| Shell   | Fish |
+| Shell | Fish |
 | Application Launcher | Rofi |
-| All packages   | starship , Hyprshot, waypaper and hyprpape , neofetch , hyprligth,hyprlock,hypridle,lavat,cli-vis |
-|--------|-----:|
+| Packages | Starship, Hyprshot, Waypaper, Hyprpaper, Neofetch, Hyprlight, Hyprlock, Hypridle, Lavat, cli-vis |
