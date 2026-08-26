@@ -11,14 +11,17 @@ Welcome to the tiling window manager based on the indie game Oneshot made as a p
 ═══════════════════════════════════════════════════════════════════════════
 
 https://github.com/user-attachments/assets/7f15a339-f52e-43be-98d1-142aee939603
+    
+    <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/affbdccc-5e3c-498c-9b4e-96b90ea43bf3" />
+    <img width="1920" height="48" alt="image" src="https://github.com/user-attachments/assets/840c03e4-3889-47d7-8d39-d5185f5f3da6" />
+    <img width="1096" height="602" alt="image" src="https://github.com/user-attachments/assets/d99c8ab9-6100-483d-a656-158b4110559f" />
+    <img width="609" height="281" alt="image" src="https://github.com/user-attachments/assets/90f6761b-bd82-4c49-9d5e-a9adf8cbe642" />
 
-<img width="609" height="602" alt="image" src="https://github.com/user-attachments/assets/a9e87f80-771b-439e-8113-9ad571025e7c" />
-<img width="609" height="602" alt="image" src="https://github.com/user-attachments/assets/a7226d96-aaf9-49de-a3de-2758f4e89f8e" />
-<img width="609" height="602" alt="image" src="https://github.com/user-attachments/assets/356b45d4-eb3d-45b7-bec6-4905ba32fd2b" />
-<img width="609" height="602" alt="image" src="https://github.com/user-attachments/assets/ac837825-5c9e-4392-b821-6f9cb04598f6" />
 
-<img width="609" height="602" alt="INFORMATION" src="https://github.com/user-attachments/assets/a8bedd79-eeef-48af-a7b9-193be8e4a95c" />
 ═══════════════════════════════════════════════════════════════════════════
+
+<img width="1500" height="500" alt="INFORMATION" src="https://github.com/user-attachments/assets/dfdb7b74-000f-415b-aa1e-582db83d4671" />
+
 
 # **COMPONENTS**
 
