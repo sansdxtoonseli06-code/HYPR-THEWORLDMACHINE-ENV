@@ -10,36 +10,9 @@ Welcome to the tiling window manager based on the indie game Oneshot made as a p
 
 ═══════════════════════════════════════════════════════════════════════════
 
-https://github.com/user-attachments/assets/7f15a339-f52e-43be-98d1-142aee939603
-.
-.
-.
-.
-.
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/affbdccc-5e3c-498c-9b4e-96b90ea43bf3" />
-.
-.
-.
-.
-.
-<img width="1920" height="48" alt="image" src="https://github.com/user-attachments/assets/840c03e4-3889-47d7-8d39-d5185f5f3da6" />
-.
-.
-.
-.
-.
-<img width="1096" height="602" alt="image" src="https://github.com/user-attachments/assets/d99c8ab9-6100-483d-a656-158b4110559f" />
-.
-.
-.
-.
-.
-<img width="609" height="281" alt="image" src="https://github.com/user-attachments/assets/90f6761b-bd82-4c49-9d5e-a9adf8cbe642" />
-.
-.
-.
-.
-.
+
+https://github.com/user-attachments/assets/cff0f2b8-efb3-4c69-8bd9-fda405fa8ddc
+
 
 ═══════════════════════════════════════════════════════════════════════════
 
