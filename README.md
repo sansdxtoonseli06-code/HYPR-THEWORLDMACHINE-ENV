@@ -7,10 +7,6 @@ Welcome to the tiling window manager based on the indie game Oneshot made as a p
 
 <img width="1500" height="500" alt="Videos and photos" src="https://github.com/user-attachments/assets/65d65f14-9bdd-41be-a9a3-3bde7a792130" />
 
-
-═══════════════════════════════════════════════════════════════════════════
-
-
 https://github.com/user-attachments/assets/cff0f2b8-efb3-4c69-8bd9-fda405fa8ddc
 
 
@@ -28,3 +24,4 @@ https://github.com/user-attachments/assets/cff0f2b8-efb3-4c69-8bd9-fda405fa8ddc
 | Application Launcher | Rofi |
 | Packages | Starship, Hyprshot, Waypaper, Hyprpaper, Neofetch, Hyprlight, Hyprlock, Hypridle, Lavat, cli-vis |
 
+═══════════════════════════════════════════════════════════════════════════
