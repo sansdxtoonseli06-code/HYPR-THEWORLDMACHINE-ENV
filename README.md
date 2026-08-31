@@ -22,7 +22,7 @@ https://github.com/user-attachments/assets/cff0f2b8-efb3-4c69-8bd9-fda405fa8ddc
 | Terminal | Kitty |
 | Shell | Fish |
 | Application Launcher | Rofi |
-| Packages | Starship, Hyprshot, Waypaper, Hyprpaper, Neofetch, Hyprlight, Hyprlock, Hypridle, Lavat, cli-vis |
+| Packages | Starship, Hyprshot, Waypaper, Hyprpaper, Neofetch, Hyprlight, Hyprlock, Hypridle, Lavat, cli-vis,silent-sddm,swaync |
 
 
 
